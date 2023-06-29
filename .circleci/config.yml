@@ -13,7 +13,7 @@ jobs:
     steps:
       - gcp-cloud-run/deploy:
           cluster: idea-quest 
-          cluster-location: us-central-1 
+          cluster-location: us-central1 
           service-name: idea-quest-api 
           unauthenticated: false 
 
