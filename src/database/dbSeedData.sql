@@ -1,2 +1,5 @@
 INSERT INTO users (first_name, last_name, email, phone_number, is_creator, is_active, profile_image_url, saved_categories, profile_category, portfolio_images, price_range, password)
     VALUES ('Devonte', 'Duncan', 'devonteduncan202@gmail.com', '13475554333', True, True, 'https://avatars.githubusercontent.com/u/14931357?v=4', '{"photography", "graphic_design"}', 'software_development', '{"https://www.searchenginejournal.com/wp-content/uploads/2019/10/ontrack-home-page-5dbad77d77c54.jpg", "https://cdn2.hubspot.net/hubfs/53/mint-homepage-design.png"}', '$$$$', '1234');
+
+INSERT INTO users (first_name, last_name, email, phone_number, is_creator, is_active, profile_image_url, saved_categories, profile_category, portfolio_images, price_range, password)
+    VALUES ('Shemar', 'Gordon', 'shemar.gordon32@gmail.com', '13473352133', True, True, 'https://avatars.githubusercontent.com/u/14931374?v=4', '{"ux_design", "graphic_design"}', 'software_development', '{"https://www.searchenginejournal.com/wp-content/uploads/2019/10/ontrack-home-page-5dbad77d77c54.jpg", "https://cdn2.hubspot.net/hubfs/53/mint-homepage-design.png"}', '$$$$', '1234');
