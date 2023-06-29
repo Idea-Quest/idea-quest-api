@@ -2,26 +2,22 @@
 # See: https://circleci.com/docs/configuration-reference
 version: 2.1
 
-steps:
-  # Docker Build
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 
-           'us-central1-docker.pkg.dev/idea-quest/my-docker-repo/myimage', 
-           '.']
+orbs:
+  gcp-cloud-run: circleci/gcp-cloud-run@1.0.2
 
-  # Docker Push
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 
-           'us-central1-docker.pkg.dev/idea-quest/my-docker-repo/myimage']
+jobs:
+  example-job:
+    docker:
+      # replace with your preferred image
+      - image: cimg/base:stable
+    steps:
+      - gcp-cloud-run/deploy:
+          cluster: idea-quest 
+          cluster-location: us-central-1 
+          service-name: idea-quest-api 
+          unauthenticated: false 
 
-  # Entrypoint, timeout and environment variables
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: 'gcloud'
-    timeout: 240s
-    args: ['compute', 'instances', 
-           'create-with-container', 'my-vm-name',
-           '--container-image', 
-           'us-central1-docker.pkg.dev/idea-quest/my-docker-repo/myimage']
-    env:
-      - 'CLOUDSDK_COMPUTE_REGION=us-central1'
-      - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
+workflows:
+  example-workflow:
+    jobs:
+      - example-job
