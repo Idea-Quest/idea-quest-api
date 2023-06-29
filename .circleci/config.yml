@@ -6,17 +6,7 @@ orbs:
   gcp-cloud-run: circleci/gcp-cloud-run@1.0.2
 
 jobs:
-  example-job:
-    docker:
-      # replace with your preferred image
-      - image: cimg/base:stable
-    steps:
-      - gcp-cloud-run/deploy:
-          cluster: idea-quest 
-          cluster-location: us-central1 
-          service-name: idea-quest-api 
-          unauthenticated: false 
-
+  
 workflows:
   example-workflow:
     jobs:
