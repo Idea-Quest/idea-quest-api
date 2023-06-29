@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "prestart": "npm run build",
-    "start": "node .",
+    "start": "nodemon .",
     "lint": "./node_modules/.bin/eslint"
   },
   "dependencies": {
@@ -18,10 +18,12 @@
   "devDependencies": {
     "@types/express": "^4.17.17",
     "@types/node": "^20.3.2",
+    "@types/pg": "^8.10.2",
     "eslint": "^8.43.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5",
+    "nodemon": "^2.0.22",
     "typescript": "^5.1.6"
   }
 }
